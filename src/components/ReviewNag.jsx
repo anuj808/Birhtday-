@@ -9,7 +9,7 @@ const REVIEW_OPTIONS = [
   { label: 'Amazing 🤩', reaction: '10/10 best review! ⭐⭐⭐⭐⭐' },
 ]
 
-const NAG_INTERVAL_MS = 120000 // 120 seconds
+const NAG_INTERVAL_MS = 1200000 // 120 seconds
 
 export default function ReviewNag() {
   const [isVisible, setIsVisible] = useState(false)

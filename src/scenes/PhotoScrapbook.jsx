@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
-import photo1 from '../assets/birthday-7889830_1280.jpg'
+import photo1 from '../assets/photo1.jpg'
 import photo2 from '../assets/photo2.jpg'
 import photo3 from '../assets/photo3.jpg'
 import photo4 from '../assets/photo4.jpg'
 import photo5 from '../assets/photo5.jpg'
+import photo5 from '../assets/photo6.jpg'
+import photo5 from '../assets/photo7.jpg'
+
 import { motion } from 'framer-motion'
 import { Camera, Sparkles, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -11,40 +14,42 @@ import { Camera, Sparkles, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } fr
 export const MEMORY_SNAPS = [
   {
     image: photo1, // Add path like "/photos/summer.jpg" or an imported URL
-    caption: 'Pure Laughs 😄',
-    date: 'Summer memories',
     emoji: '✨',
     bg: 'from-[#FFF6EA] to-[#FFD9B3]',
     rotation: '-rotate-2',
   },
   {
     image: photo2,
-    caption: 'Best Adventures ☕',
-    date: 'Coffee & chats',
     emoji: '💫',
     bg: 'from-[#FFD9B3] to-[#FFB6B9]',
     rotation: 'rotate-1',
   },
   {
     image: photo3,
-    caption: 'Golden Hours 🌅',
-    date: 'Unfiltered joy',
     emoji: '💛',
     bg: 'from-[#FFB6B9] to-[#FFD97D]',
     rotation: '-rotate-1',
   },
   {
     image: photo4,
-    caption: 'Silly Moments 🤪',
-    date: 'Never a dull second',
     emoji: '📸',
     bg: 'from-[#FFD97D] to-[#F4A261]',
     rotation: 'rotate-2',
   },
   {
     image: photo5,
-    caption: 'To Many More 🥂',
-    date: 'Always by your side',
+    emoji: '🎂',
+    bg: 'from-[#FFB6B9] to-[#FFF6EA]',
+    rotation: '-rotate-2',
+  },
+  {
+  image: photo6,
+    emoji: '🎂',
+    bg: 'from-[#FFB6B9] to-[#FFF6EA]',
+    rotation: '-rotate-2',
+  },
+  {
+  image: photo7,
     emoji: '🎂',
     bg: 'from-[#FFB6B9] to-[#FFF6EA]',
     rotation: '-rotate-2',

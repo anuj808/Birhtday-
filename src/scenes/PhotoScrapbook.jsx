@@ -53,7 +53,7 @@ export const MEMORY_SNAPS = [
     emoji: '🎂',
     bg: 'from-[#FFB6B9] to-[#FFF6EA]',
     rotation: '-rotate-2',
-  },
+  }
 ]
 
 export default function PhotoScrapbook({ snaps = MEMORY_SNAPS, onNext, onPrev }) {
@@ -125,11 +125,11 @@ export default function PhotoScrapbook({ snaps = MEMORY_SNAPS, onNext, onPrev })
         </div>
 
         <h2 className="text-2xl sm:text-3xl font-bold font-fredoka text-cocoa mb-1.5 tracking-wide">
-          Our Favorite Memories 📸
+         Here is some version of our fav Bhanumati 
         </h2>
 
         <p className="text-xs sm:text-sm text-cocoa/80 mb-4 max-w-sm font-medium leading-relaxed">
-          Snapshots of all the laughs, inside jokes, and special moments shared together.
+         Thank You mt bolna 1 plate biryani, momo, pizza , or cold bej dena 
         </p>
 
         {/* SWIPEABLE HORIZONTAL CAROUSEL */}
@@ -254,7 +254,7 @@ export default function PhotoScrapbook({ snaps = MEMORY_SNAPS, onNext, onPrev })
             onClick={onNext}
             className="group inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-gradient-to-r from-amber via-gold to-peach text-cocoa font-bold text-xs sm:text-sm shadow-cozy hover:shadow-glow-gold hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
           >
-            <span>Hot Wheels? 🚗</span>
+            <span>Want to next ?</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
         </div>

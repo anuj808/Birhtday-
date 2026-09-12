@@ -129,7 +129,7 @@ export default function Intro({ friendName = "Rimi", onNext }) {
               </h1>
 
               <p className="text-xs sm:text-sm text-cocoa/80 font-medium leading-relaxed mb-3">
-                A warm little journey crafted with love to celebrate your brightest day!
+                
               </p>
 
               <div className="flex items-center gap-1.5 text-amber text-xs font-bold">

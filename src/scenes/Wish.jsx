@@ -4,10 +4,10 @@ import { Sparkles, Heart, ArrowRight, ArrowLeft } from 'lucide-react'
 import FairyLightsCanvas from '../components/FairyLightsCanvas'
 
 const DEFAULT_PARAGRAPHS = [
-  "To someone who turns ordinary days into the warmest memories ✨",
-  "Thank you for being the person who listens without judgment, laughs at the silliest moments, and brings so much light into the lives of everyone around you.",
-  "May this upcoming year bring you wild adventures, quiet moments of peace, and all the dreams coming true in ways bigger and sweeter than you imagined.",
-  "No matter where life takes us next, I am endlessly grateful to celebrate you today and always.",
+  "Happy birthday Rimidi HBD to U HBD to U  ✨",
+  "Thank you for being the person who listens without judgment, Thank you for let me annoy you everytime 🌝🌝 ",
+  "May this upcoming year bring you an IPHONE from your didi, ",
+  "Sar pe mt chdd jana ab but really you are a very special person in my life 😌",
 ]
 
 export default function Wish({

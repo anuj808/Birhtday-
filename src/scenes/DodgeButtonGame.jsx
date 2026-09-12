@@ -1,17 +1,17 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import confetti from 'canvas-confetti'
-import { Car, Sparkles, Heart, ArrowRight, ArrowLeft } from 'lucide-react'
+import { User, Sparkles, Heart, ArrowRight, ArrowLeft } from 'lucide-react'
 import { useSound } from '../context/SoundContext'
 
 const TAUNT_MESSAGES = [
   'pick one honestly:',
   'nice try 👀',
   'nope, not happening 😂',
-  'why are you trying so hard? 🚗',
+  'why are you trying so hard? ',
   'you know you want to say yes!',
   'the button is faster than you ⚡',
-  'resistance is futile! 🏎️💨',
+  'resistance is futile! ',
   'just click Definitely Yes already! 🥹',
 ]
 
@@ -156,12 +156,12 @@ export default function DodgeButtonGame({ onNext, onPrev }) {
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr from-amber via-gold to-peach flex items-center justify-center mb-4 shadow-md shadow-amber/20"
         >
-          <Car className="w-8 h-8 sm:w-10 sm:h-10 text-cocoa" />
+          <User className="w-8 h-8 sm:w-10 sm:h-10 text-cocoa" />
         </motion.div>
 
         {/* Big Question */}
         <h2 className="text-2xl sm:text-3xl sm:leading-tight font-bold font-fredoka text-cocoa mb-2 tracking-wide max-w-md">
-          Will you buy Hot Wheels for me? 🚗
+          Am I Your Favourite Person more than your bekar didi ?
         </h2>
 
         {/* Taunt text that changes after dodges */}
@@ -267,15 +267,16 @@ export default function DodgeButtonGame({ onNext, onPrev }) {
               className="relative w-full max-w-sm bg-white rounded-3xl p-6 sm:p-8 border-2 border-peach shadow-cozy-lg flex flex-col items-center text-center"
             >
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber to-gold flex items-center justify-center mb-4 shadow-md shadow-gold/30">
-                <Car className="w-8 h-8 text-cocoa" />
+                <User className="w-8 h-8 text-cocoa" />
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-bold font-fredoka text-cocoa mb-2">
-                Thank you so much! 🥹🚗
+                Thank you so much! 🥹
+                I knew it 😁😁
               </h3>
 
               <p className="text-xs sm:text-sm text-cocoa/80 font-medium mb-6 leading-relaxed">
-                Hot Wheels collection expanded! You’re officially the absolute best!
+                HEHEHEHEH 🌝
               </p>
 
               <button

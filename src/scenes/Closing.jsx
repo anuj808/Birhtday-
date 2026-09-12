@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import confetti from 'canvas-confetti'
 import { Sparkles, RotateCcw, Heart, ArrowLeft } from 'lucide-react'
@@ -54,6 +54,72 @@ export default function Closing({
     }, 300)
   }
 
+  // --- NEW: listen on the microphone for someone saying "foo" and blow the candle ---
+  const recognitionRef = useRef(null)
+  const isBlownRef = useRef(isBlown)
+  useEffect(() => {
+    isBlownRef.current = isBlown
+  }, [isBlown])
+
+  useEffect(() => {
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition
+
+    // Gracefully skip on unsupported browsers instead of breaking anything
+    if (!SpeechRecognition) return
+
+    const recognition = new SpeechRecognition()
+    recognition.continuous = true
+    recognition.interimResults = true
+    recognition.lang = 'en-US'
+
+    recognition.onresult = (event) => {
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        const transcript = event.results[i][0].transcript.toLowerCase()
+        if (transcript.includes('foo')) {
+          if (!isBlownRef.current) handleBlowCandle()
+          break
+        }
+      }
+    }
+
+    // Auto-restart so listening keeps working until the candle is blown
+    recognition.onend = () => {
+      if (!isBlownRef.current) {
+        try {
+          recognition.start()
+        } catch (e) {
+          /* already started, ignore */
+        }
+      }
+    }
+
+    try {
+      recognition.start()
+    } catch (e) {
+      /* mic permission not granted yet, ignore silently */
+    }
+
+    recognitionRef.current = recognition
+
+    return () => {
+      recognition.onend = null
+      recognition.stop()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // --- NEW: little extra sparkle burst for the added button ---
+  const handleExtraSparkle = () => {
+    confetti({
+      particleCount: 40,
+      spread: 70,
+      scalar: 0.7,
+      origin: { y: 0.4 },
+      colors: ['#FFD97D', '#FFF6EA', '#F4A261'],
+    })
+  }
+
   return (
     <div className="relative w-full min-h-[85vh] flex flex-col items-center justify-center px-4 py-8 select-none">
       {/* Shared 3D Fairy Lights Particle Canvas in background */}
@@ -73,6 +139,17 @@ export default function Closing({
           </button>
         </div>
       )}
+
+      {/* NEW: cute corner cats, purely decorative, kept out of the way of existing UI */}
+      <span className="fixed top-6 right-6 z-40 text-2xl sm:text-3xl pointer-events-none select-none opacity-90">
+        🐱
+      </span>
+      <span className="fixed bottom-6 left-6 z-40 text-2xl sm:text-3xl pointer-events-none select-none opacity-90">
+        🐈
+      </span>
+      <span className="fixed bottom-6 right-6 z-40 text-2xl sm:text-3xl pointer-events-none select-none opacity-90">
+        🐱
+      </span>
 
       {/* Main Closing Card */}
       <motion.div
@@ -229,7 +306,7 @@ export default function Closing({
                   tap the flame and make a wish 🕯️✨
                 </p>
                 <p className="text-xs text-cocoa/60 font-medium mt-1">
-                  (make the biggest wish of your heart)
+                  (make the biggest wish of your heart, or just say "foo" out loud)
                 </p>
               </motion.div>
             ) : (
@@ -280,6 +357,16 @@ export default function Closing({
               <span>Watch Again</span>
             </button>
           )}
+
+          {/* NEW: extra Sparkles button, additive only */}
+          <button
+            onClick={handleExtraSparkle}
+            aria-label="Add a little extra sparkle"
+            className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-amber/20 border border-amber/60 hover:bg-amber/30 text-cocoa font-semibold text-xs sm:text-sm shadow-xs transition-all duration-200"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>More Sparkle</span>
+          </button>
         </div>
       </motion.div>
     </div>

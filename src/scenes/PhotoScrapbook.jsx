@@ -129,7 +129,7 @@ export default function PhotoScrapbook({ snaps = MEMORY_SNAPS, onNext, onPrev })
         </h2>
 
         <p className="text-xs sm:text-sm text-cocoa/80 mb-4 max-w-sm font-medium leading-relaxed">
-         Thank You mt bolna 1 plate biryani, momo, pizza , or cold bej dena 
+         Thank You mt bolna 1 plate biryani, momo, pizza , or cold drink bej dena 
         </p>
 
         {/* SWIPEABLE HORIZONTAL CAROUSEL */}
@@ -254,7 +254,7 @@ export default function PhotoScrapbook({ snaps = MEMORY_SNAPS, onNext, onPrev })
             onClick={onNext}
             className="group inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-gradient-to-r from-amber via-gold to-peach text-cocoa font-bold text-xs sm:text-sm shadow-cozy hover:shadow-glow-gold hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
           >
-            <span>Want to next ?</span>
+            <span>Want to see next ?</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
         </div>
